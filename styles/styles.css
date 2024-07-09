@@ -1,0 +1,78 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+  --color-principal: #010202;
+  --color-secundario: #e53a47;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 3.5em;
+}
+
+h2 {
+  font-size: 2.7em;
+}
+
+h3 {
+  font-size: 2em;
+}
+
+p {
+  font-size: 1.25em;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+/* ESTILOS DEL BOTON CON SLIDE */
+.ov-btn-slide-top {
+  background: var(--color-secundario); 
+  color: var(--color-principal); 
+  border: 2px solid var(--color-principal); 
+  padding: 10px 15px;
+  border-radius: 7px; 
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  display: inline-block;
+  font-weight: bold;
+}
+.ov-btn-slide-top:hover {
+  color: var(--color-secundario); 
+}
+.ov-btn-slide-top::after {
+  content: "";
+  background: var(--color-principal); 
+  position: absolute;
+  z-index: -1;
+  padding: 15px 15px;
+  display: block;
+  left: 0;
+  right: 0;
+  top: -100%;
+  bottom: 100%;
+  -webkit-transition: all 0.35s;
+  transition: all 0.35s;
+}
+.ov-btn-slide-top:hover::after {
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  -webkit-transition: all 0.35s;
+  transition: all 0.35s;
+}
+
+.form .ov-btn-slide-top:hover{
+    background-color: white;
+    color: var(--color-secundario);
+    font-weight: bold;
+    cursor: pointer;
+}
