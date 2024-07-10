@@ -11,8 +11,12 @@
   padding: 0;
 }
 
+html{
+  scroll-behavior: smooth;
+}
+
 h1 {
-  font-size: 3.5em;
+  font-size: 5.5em;
 }
 
 h2 {
@@ -31,13 +35,164 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
+.color-acento{
+  color: var(--color-secundario);
+}
+
+.container {
+  max-width: 1400px;
+  margin: auto;
+}
+
+header {
+  background-color: var(--color-principal);
+}
+
+header .logo {
+  margin: 0;
+  width: 200px;
+  height: 140px;
+  padding: 25px 30px;
+}
+
+header .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header nav {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding-bottom: 25px;
+}
+
+header a {
+  padding: 5px 12px;
+  text-decoration: none;
+  font-weight: bold;
+  color: var(--color-secundario);
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+header a:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: white;
+  transition: left 0.8s;
+}
+
+header a:hover::after{
+  left: 0;
+}
+
+
+/* Seccion HERO */
+
+#hero{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  height: 80vh;
+  color: white;
+  background-image: linear-gradient(
+    0deg,
+    rgba(0,0,0,0.5),
+    rgba(0,0,0,0.5)
+  )
+  ,url(../assets/hero-image.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+
+/* SECCION SOBRE NOSOTROS */
+
+#sobre-nosotros{
+  
+}
+
+#sobre-nosotros .container{
+  text-align: center;
+  padding: 200px 12px;
+}
+
+/* Seccion Nuestros Servicios */
+
+#nuestros-servicios{
+  background-color: var(--color-principal);
+  color: white;
+  text-align: center;
+}
+
+#nuestros-servicios .container{
+  padding: 120px 0px;
+}
+
+#nuestros-servicios p{
+  display: none;
+}
+
+#nuestros-servicios h2{
+  margin-top: 0;
+  font-size: 3.2em;
+}
+
+#nuestros-servicios .carta{
+  background-position: center center;
+  background-size: cover;
+  padding: 50px;
+  margin: 20px;
+  border-radius: 12px;
+}
+
+.carta:first-child{
+  background-image: linear-gradient(
+    0deg,
+    rgba(0,0,0,0.5),
+    rgba(0,0,0,0.5)
+  )
+  ,url(../assets/imagen2.JPEG);
+  
+}
+
+.carta:nth-child(2){
+  background-image: linear-gradient(
+    0deg,
+    rgba(0,0,0,0.5),
+    rgba(0,0,0,0.5)
+  )
+  ,url(../assets/imagen1.JPEG);
+  
+}
+
+.carta:last-child{
+  background-image: linear-gradient(
+    0deg,
+    rgba(0,0,0,0.5),
+    rgba(0,0,0,0.5)
+  )
+  ,url(../assets/maquinaria.jpg);
+  
+}
+
 /* ESTILOS DEL BOTON CON SLIDE */
 .ov-btn-slide-top {
-  background: var(--color-secundario); 
-  color: var(--color-principal); 
-  border: 2px solid var(--color-principal); 
+  background: var(--color-secundario);
+  color: var(--color-principal);
+  border: 2px solid var(--color-principal);
   padding: 10px 15px;
-  border-radius: 7px; 
+  border-radius: 7px;
   position: relative;
   z-index: 1;
   overflow: hidden;
@@ -45,11 +200,11 @@ body {
   font-weight: bold;
 }
 .ov-btn-slide-top:hover {
-  color: var(--color-secundario); 
+  color: var(--color-secundario);
 }
 .ov-btn-slide-top::after {
   content: "";
-  background: var(--color-principal); 
+  background: var(--color-principal);
   position: absolute;
   z-index: -1;
   padding: 15px 15px;
@@ -70,9 +225,302 @@ body {
   transition: all 0.35s;
 }
 
-.form .ov-btn-slide-top:hover{
-    background-color: white;
-    color: var(--color-secundario);
-    font-weight: bold;
-    cursor: pointer;
+.form .ov-btn-slide-top:hover {
+  background-color: white;
+  color: var(--color-secundario);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Boton de Whatsapp */
+
+.float{
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  background-color: #25d366;
+  bottom: 40px;
+  right: 40px;
+  color: #fff;
+  border-radius: 50%;
+  text-align: center;
+  box-shadow: 2px 2px 3px #999;
+  z-index: 999;
+}
+
+.fa-whatsapp{
+  font-size: 58px;
+}
+
+.float:hover{
+  background-color: #28e76e;
+}
+
+/* Seccion Contacto */
+
+.container-contact {
+  background: linear-gradient(rgba(0 0 0 / 0.8), rgba(0 0 0 / 0.8)),
+    url(../assets/hero-image.jpeg);
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  padding: 20px;
+  gap: 10px;
+  width: auto;
+}
+
+.box-info {
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.box-info > h2 {
+  text-align: left;
+  letter-spacing: 5px;
+}
+
+.data {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.data > p {
+  font-size: 1rem;
+}
+
+.data > p > i {
+  color: var(--color-secundario);
+  margin-right: 10px;
+  font-size: 25px;
+}
+
+.links {
+  display: flex;
+  gap: 15px;
+}
+
+.links > a {
+  text-decoration: none;
+  width: 40px;
+  height: 40px;
+  background: var(--color-secundario);
+  text-align: center;
+  transition: 0.1s;
+}
+
+.links > a > i {
+  color: #fff;
+  line-height: 40px;
+  font-size: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 15px;
+}
+
+.input-box {
+  position: relative;
+}
+
+.input-box > input {
+  width: 100%;
+  height: 40px;
+  padding: 0 10px;
+  outline: none;
+  background: rgba(255 255 255 / 0.1);
+  border: 3px solid transparent;
+  letter-spacing: 1px;
+  transition: 0.3s;
+  color: #fff;
+}
+
+.input-box > input::placeholder,
+.input-box > textarea::placeholder {
+  color: #a3a3a3;
+}
+
+.input-box > input:focus::placeholder,
+.input-box > textarea:focus::placeholder {
+  color: transparent;
+}
+
+.input-box > input:focus,
+.input-box > textarea:focus {
+  border-bottom: 3px solid var(--color-secundario);
+  animation: shake 0.2s;
+}
+
+.input-box > textarea {
+  width: 100%;
+  height: 130px;
+  padding: 10px;
+  background: rgba(255 255 255 / 0.1);
+  border: 3px solid transparent;
+  letter-spacing: 1px;
+  outline: none;
+  transition: 0.3s;
+  color: #fff;
+  letter-spacing: 1.5px;
+}
+
+.input-box > i {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 10px;
+  color: rgba(255 255 255 / 0.3);
+  transition: 0.3s;
+}
+
+.input-box > input:focus ~ i {
+  color: var(--color-secundario);
+}
+
+form > button {
+  width: 100%;
+  padding: 10px;
+  outline: none;
+  background: var(--color-secundario);
+  color: #fff;
+  border: none;
+  transition: 0.1s;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+form > button:hover,
+.links > a:hover {
+  background: rgb(172, 16, 47);
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(-10px);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateX(10px);
+  }
+}
+
+@media screen and (max-width: 738px) {
+  .container-contact {
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .box-info {
+    gap: 15px;
+  }
+
+  .box-info > h1 {
+    font-size: 1.5rem;
+  }
+}
+
+/* FOOTER */
+
+footer{
+  background-color: var(--color-secundario);
+}
+
+footer p{
+  margin: 0;
+  color: var(--color-principal);
+  padding: 12px;
+}
+
+
+footer .container{
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+@media (min-width:720px){
+ header{
+  position: fixed;
+  width: 100%;
+ }
+
+  header .container{
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  header nav{
+    flex-direction: row;
+    padding-bottom: 0;
+    align-items: center;
+    padding-right: 20px;
+  }
+
+  #hero h1{
+    font-size: 6rem;
+  }
+
+  #sobre-nosotros .container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #sobre-nosotros .texto{
+    width: 50%;
+    text-align: initial;
+    max-width: 600px;
+    padding: 0px 30px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  #sobre-nosotros .img-container{
+    background-image: url(../assets/imagen2.JPEG);
+    background-size: cover;
+    background-position: center center;
+    height: 500px;
+    width: 400px;
+}
+
+
+#nuestros-servicios .programas{
+  display: flex;
+  justify-content: center;
+}
+
+#nuestros-servicios p{
+  display: block;
+  margin-bottom: 30px;
+}
+
+#nuestros-programas h3{
+  margin-top: 0;
+}
+
+#nuestros-servicios .carta{
+  padding: 50px;
+  
+}
 }
